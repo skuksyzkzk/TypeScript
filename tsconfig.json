@@ -1,11 +1,16 @@
 {
     "compilerOptions": {
-        "target": "ES2015",
-        "module": "ESNext",
-        "moduleResolution": "Node",
-        "esModuleInterop": true,
-        "lib" : ["ESNext","DOM"],
-        "strict": true
+        "target": "ES2015",//어떤 버전으로 컴파일 대부분 js가 ES6 2015버전임 
+        "module": "ESNext",//모듈시스템 
+        "moduleResolution": "Node",//모듈 해석 방식 지정 Node import 할때 그런거관련 
+        "esModuleInterop": true, // 외부에서 파일이 ESM common js 섞여있기에 이걸로 해야됨 그래야 둘다 받음 ESM 방식이 export default 이걸로 내보내는 거임 
+        "lib" : ["ESNext","DOM"],// 컴파일에서 사용할 라이브러리 지정 
+        //"isolatedModules": true,
+        "strict": true,
+        // 컴파일러가 참조할 타입 선언의 경로를 지정 
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
     },
     "include": [
         "src/**/*.ts"
